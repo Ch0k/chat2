@@ -1,0 +1,26 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: <%= Rails.application.credentials[Rails.env.to_sym][:database][:host] %>
+  user: <%= Rails.application.credentials[Rails.env.to_sym][:database][:database_user] %>
+  password: <%= Rails.application.credentials[Rails.env.to_sym][:database][:database_password] %>
+development:
+  <<: *default
+  database: development_chat2
+test:
+  <<: *default
+  database: test_chat2
+develop:
+  <<: *default
+  database: chat2
+  host: <%= Rails.application.credentials.dig(:develop, :HOST) %>
+  user: <%= Rails.application.credentials.dig(:develop, :DATABASE_USER) %>
+  password: <%= Rails.application.credentials.dig(:develop, :DATABASE_PASSWORD) %>
+staging:
+  <<: *default
+  pool: 5
+  database: chat2
+production:
+  <<: *default
+  database: chat2
+  pool: 5
