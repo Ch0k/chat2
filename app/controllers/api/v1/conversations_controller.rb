@@ -63,7 +63,6 @@ module Api
         if (@receipt.errors.blank?)
           @conversation = @receipt.conversation
           render json: @conversation, status: :ok
-          #redirect_to conversation_path(@conversation, :box => :sentbox)
         else
           render json: { errors: "Error with messaage" }
         end

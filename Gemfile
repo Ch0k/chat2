@@ -18,6 +18,7 @@ gem 'pg'
 gem 'oj'
 gem 'active_model_serializers', '~> 0.10'
 gem 'api_guard'
+gem 'mailboxer'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
