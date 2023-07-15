@@ -1,9 +1,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: <%= Rails.application.credentials[Rails.env.to_sym][:database][:host] %>
-  user: <%= Rails.application.credentials[Rails.env.to_sym][:database][:database_user] %>
-  password: <%= Rails.application.credentials[Rails.env.to_sym][:database][:database_password] %>
+  user: <%= ENV.fetch("POSTGRES_USER") %>
+  password: <%= ENV.fetch("POSTGRES_PASSWORD") %>
+  host: <%= ENV.fetch("DATABASE_HOST") %>
 development:
   <<: *default
   database: development_chat2

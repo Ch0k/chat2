@@ -1,24 +1,18 @@
-# README
+## Build Docker image
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+''' docker build -t chat2 . '''
 
-Things you may want to cover:
+## Run Docker container
 
-* Ruby version
+''' docker run  --network="host" -p 3000:3000 dimbo '''
 
-* System dependencies
+## Docker Compose
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+''' docker-compose build '''
+''' docker-compose run web bundle install '''
+''' docker-compose run web yarn install '''
+''' docker-compose run web rake db:create '''
+''' docker-compose run web rake db:migrate '''
+''' docker-compose up '''
+''' docker-compose down '''
+''' docker-compose run app rake db:migrate db:create '''
