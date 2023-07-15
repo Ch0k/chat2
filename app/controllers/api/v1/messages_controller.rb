@@ -11,7 +11,6 @@ module Api
       end
 
       def show
-        byebug
         @message = Mailboxer::Message.find(params[:id])
         @conversation = @message&.conversation
         if @message.present? && @conversation.present?
