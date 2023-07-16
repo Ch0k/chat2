@@ -8,7 +8,8 @@ services:
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
   web:
-    build: .
+    # build: .
+    image: ch0k89/chat2:latest
     env_file:
       - .env
     volumes:

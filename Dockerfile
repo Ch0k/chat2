@@ -1,5 +1,5 @@
 # Dockerfile# Use ruby image to build our own image
-FROM ruby:2.7.2
+FROM ruby:2.7.2-slim
 RUN apt-get update && apt-get install -y \
   curl \
   build-essential \
