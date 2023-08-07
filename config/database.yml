@@ -10,12 +10,6 @@ development:
 test:
   <<: *default
   database: test_chat2
-develop:
-  <<: *default
-  database: chat2
-  host: <%= Rails.application.credentials.dig(:develop, :HOST) %>
-  user: <%= Rails.application.credentials.dig(:develop, :DATABASE_USER) %>
-  password: <%= Rails.application.credentials.dig(:develop, :DATABASE_PASSWORD) %>
 staging:
   <<: *default
   pool: 5
@@ -24,3 +18,6 @@ production:
   <<: *default
   database: chat2
   pool: 5
+  host: <%= Rails.application.credentials.dig(:production, :HOST) %>
+  user: <%= Rails.application.credentials.dig(:production, :DATABASE_USER) %>
+  password: <%= Rails.application.credentials.dig(:production, :DATABASE_PASSWORD) %>

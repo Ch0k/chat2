@@ -1,7 +1,9 @@
 ## Build Docker image
 
 ''' docker build -t chat2 . '''
-
+''' docker buildx build --push --progress=plain \
+  --platform linux/amd64 --platform linux/arm64 -t chat2 . '''
+  
 ## Run Docker container
 
 ''' docker run  --network="host" -p 3000:3000 dimbo '''
