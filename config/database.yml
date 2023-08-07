@@ -15,7 +15,8 @@ staging:
   pool: 5
   database: chat2
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
   database: chat2
   pool: 5
   host: <%= Rails.application.credentials.dig(:production, :HOST) %>
